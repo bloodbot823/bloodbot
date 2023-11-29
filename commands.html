@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commands</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        #searchContainer {
+            text-align: right;
+            width: 200px; /* Adjust the width as needed */
+            position: fixed;
+            top: 20px; /* Adjust the distance from the top */
+            right: 50px; /* Adjust the distance from the right */
+        }
+        #searchInput {
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #searchResult {
+            text-align: left;
+        }
+        #commands {
+            width: 100%;
+        }
+        #commands p {
+            margin: 0;
+        }
+        .category {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="commands">
+        <h2 class="moderation">moderation</h2>
+        <p class="moderation">ban @ | bans a user</p>
+        <p class="moderation">kick @ | kicks a user</p>
+        <p class="moderation">mute @ | mutes a user</p>
+        <p class="moderation">cmute @ [time] | mutes a user in the dedicated channel for a certain amount of time</p>
+        <p class="moderation">botclean [Amount] | Deletes the dedicated amount of messages send by Blood</p>
+
+        <h2 class="miscellaneous">Miscellaneous</h2>
+        <p class="miscellaneous">afk [Reason] | Sets the user as AFK and display an AFK message when mentioned</p>
+        <p class="miscellaneous">ping | shows the latency of the bot</p>
+        <p class="miscellaneous">verify | Initiate the verify process</p>
+        <p class="miscellaneous">setmod | setup moderation (makes mod-log channel and imute, rmute and muted role)</p>
+
+        <h2 class="fun">Fun</h2>
+        <p class="fun"></p>
+        <p class="fun"></p>
+        <p class="fun"></p>
+        <p class="fun"></p>
+    </div>
+
+    <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Search for a command...">
+        <p id="searchResult"></p>
+    </div>
+
+    <script>
+        function showCategory(category) {
+            const categories = document.getElementsByClassName('category');
+            for (let i = 0; i < categories.length; i++) {
+                categories[i].style.display = 'none';
+            }
+            const selectedCategory = document.getElementsByClassName(category);
+            for (let i = 0; i < selectedCategory.length; i++) {
+                selectedCategory[i].style.display = 'block';
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const commandsDiv = document.getElementById('commands');
+            const commands = Array.from(commandsDiv.getElementsByTagName('p'))
+                .map(node => node.textContent.trim());
+
+            const foundCommands = commands.filter(command => command.toLowerCase().includes(searchValue));
+
+            const searchResult = document.getElementById('searchResult');
+            if (searchValue === '') {
+                searchResult.textContent = '';
+            } else if (foundCommands.length > 0) {
+                searchResult.textContent = 'Search results:';
+                searchResult.innerHTML = foundCommands.map(command => `<p>${command}</p>`).join('');
+            } else {
+                searchResult.textContent = 'No matching commands found.';
+            }
+        });
+    </script>
+</body>
+</html>

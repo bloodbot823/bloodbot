@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black; /* Set the background color to black */
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative; /* Set the body to relative positioning */
+        }
+
+        #options {
+            display: flex;
+            justify-content: center; /* Center the buttons */
+            width: 70%; /* Adjust the width of the options container */
+            margin-top: 20px; /* Add spacing from the title */
+            position: relative; /* Set the options container to relative positioning */
+            z-index: 1; /* Ensure buttons are above the canvas */
+        }
+
+        #options a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgb(104, 53, 7); /* Set button outlines to the specified color */
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        #options a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Set the canvas to be behind other elements */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        #banner {
+            width: 75%; /* Adjust the width of the banner */
+        }
+    </style>
+</head>
+<body>
+    <img id="banner" src="bloodbanner.png" alt="Blood Banner">
+    <div id="options">
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1177761033012650114&permissions=8&scope=bot">Invite</a>
+        <a href="https://discord.gg/vinland">Discord</a>
+        <a href="commands.html">Commands</a>
+        <a href="https://discord.gg/vinland">Support</a>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <footer>
+        <p>Copyright (c) blood.bot 2023 all rights served</p>
+    </footer>
+
+    <script>
+        let canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Clear canvas when resizing the window
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
