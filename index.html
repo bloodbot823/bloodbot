@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="blood">
     <meta property="og:description" content="a premium discord bot giving you the resources to create a powerful and versatile community at the tip of your fingers.">
     <meta property="og:image" content="https://cdn.discordapp.com/icons/1167838442776961128/ac1a7ade52acfbd86ef2b0e7dc27e151.png?size=1024">
     <meta property="og:url" content="https://bloodbot.shop">
     <meta property="og:type" content="website">
-        <!-- Favicon -->
-    <link rel="icon" href="favicon-32x32.png" type="favicon-32x32.png">
-</head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blood</title>
+    <!-- Favicon -->
+    <link rel="icon" href="bloodbot.png" type="bloodbot.png">
+
     <style>
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: black; /* Set the background color to black */
             color: white;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             position: relative; /* Set the body to relative positioning */
         }
 
         #options {
-            display: flex;
-            justify-content: center; /* Center the buttons */
-            width: 70%; /* Adjust the width of the options container */
-            margin-top: 20px; /* Add spacing from the title */
-            position: relative; /* Set the options container to relative positioning */
-            z-index: 1; /* Ensure buttons are above the canvas */
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Stack buttons vertically */
+}
 
-        #options a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid rgb(104, 53, 7); /* Set button outlines to the specified color */
-            border-radius: 5px;
-            margin: 5px;
-        }
+#options a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid rgb(104, 53, 7);
+    border-radius: 5px;
+    margin: 5px;
+}
 
-        #options a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+#options a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
         canvas {
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
@@ -63,28 +56,29 @@
         }
 
         footer {
-            position: fixed;
-            bottom: 0;
             width: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: black;
             color: white;
             text-align: center;
             padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            box-sizing: border-box; /* Ensure padding and border are included in element's total width/height */
         }
 
         #banner {
-            width: 75%; /* Adjust the width of the banner */
+            width: 100%; /* Adjust the width of the banner */
         }
     </style>
 </head>
+
 <body>
     <img id="banner" src="bloodbanner.png" alt="Blood Banner">
     <div id="options">
         <a href="https://discord.com/api/oauth2/authorize?client_id=1177761033012650114&permissions=8&scope=bot">Invite</a>
         <a href="https://discord.gg/vinland">Discord</a>
         <a href="./commands">Commands</a>
-        <a href="https://discord.gg/vinland">Support</a>
     </div>
     <canvas id="canvas"></canvas>
 
@@ -104,4 +98,5 @@
         });
     </script>
 </body>
+
 </html>
