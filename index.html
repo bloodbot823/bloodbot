@@ -20,18 +20,29 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: black; /* Set the background color to black */
+            background-color: black;
             color: white;
-            position: relative; /* Set the body to relative positioning */
+            position: relative;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        #banner {
+            width: 75%; /* Adjust the width of the banner */
+            z-index: -1; /* Set the banner behind other elements */
+            top: 160px;
+            right: 0px;
+            left: 200px;
+            height: auto;
+            position: absolute;
         }
 
         #options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column; /* Stack buttons vertically */
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Stack buttons vertically */
+        }
 
         #options a {
             color: white;
@@ -56,10 +67,6 @@
             position: fixed;
             bottom: 0;
             box-sizing: border-box; /* Ensure padding and border are included in element's total width/height */
-        }
-
-        #banner {
-            width: 75%; /* Adjust the width of the banner */
         }
     </style>
 </head>
