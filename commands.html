@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="blood commands">
     <meta property="og:description" content="The list of commands for the versatile discord blood bot">
-    <meta property="og:image" content="https://cdn.discordapp.com/banners/1167838442776961128/b21433bf37f7552ee1e0cab6d426515b.png?size=1024">
+    <meta property="og:image"
+        content="https://cdn.discordapp.com/banners/1167838442776961128/b21433bf37f7552ee1e0cab6d426515b.png?size=1024">
     <meta property="og:url" content="https://bloodbot.shop/commands">
     <meta property="og:type" content="website">
-        <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="favicon-32x32.png" type="favicon-32x32.png">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blood - commands</title>
+
     <style>
         body {
             background-color: black;
@@ -29,13 +28,18 @@
             align-items: flex-start;
             padding: 20px;
         }
+
         #searchContainer {
             text-align: right;
-            width: 200px; /* Adjust the width as needed */
+            width: 200px;
+            /* Adjust the width as needed */
             position: fixed;
-            top: 20px; /* Adjust the distance from the top */
-            right: 50px; /* Adjust the distance from the right */
+            top: 20px;
+            /* Adjust the distance from the top */
+            right: 50px;
+            /* Adjust the distance from the right */
         }
+
         #searchInput {
             padding: 5px;
             border-radius: 10px;
@@ -44,6 +48,7 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         #prefixMessage {
             background-color: #2c3e50;
             color: yellow;
@@ -54,28 +59,31 @@
             margin-bottom: 20px;
             border-radius: 5px;
         }
+
         #searchResult {
             text-align: left;
         }
+
         #commands {
             width: 100%;
             position: fixed;
             left: 25px;
             top: 55px;
         }
+
         #commands p {
             margin: 0;
         }
+
         .category {
             display: none;
         }
     </style>
 </head>
+
 <body>
     <div id="prefixMessage">Default prefix = , | () = optional argument, [] = required argument</div>
-<body>
-    
-</body>
+
     <div id="commands">
         <h2 class="moderation">moderation</h2>
         <p class="moderation">ban @ | bans a user</p>
@@ -83,14 +91,15 @@
         <p class="moderation">mute @ | mutes a user</p>
         <p class="moderation">cmute @ [time] | mutes a user in the dedicated channel for a certain amount of time</p>
         <p class="moderation">botclean [Amount] | Deletes the dedicated amount of messages send by Blood</p>
-        <p class="moderation">nick [user] [nick] | changes nickname to specified name (must have manage_nicknames role)</p>
+        <p class="moderation">nick [user] [nick] | changes nickname to specified name (must have manage_nicknames
+            role)</p>
 
         <h2 class="miscellaneous">Miscellaneous</h2>
         <p class="miscellaneous">afk (reason) | Sets the user as AFK and display an AFK message when mentioned</p>
         <p class="miscellaneous">ping | shows the latency of the bot</p>
         <p class="miscellaneous">verify | Initiate the verify process</p>
-        <p class="miscellaneous">setmod | setup moderation (makes mod-log channel and imute, rmute and muted role)</p>
-
+        <p class="miscellaneous">setmod | setup moderation (makes mod-log channel and imute, rmute and muted
+            role)</p>
 
         <h2 class="fun">Fun</h2>
         <p class="fun"></p>
@@ -116,7 +125,7 @@
             }
         }
 
-        document.getElementById('searchInput').addEventListener('input', function() {
+        document.getElementById('searchInput').addEventListener('input', function () {
             const searchValue = this.value.toLowerCase();
             const commandsDiv = document.getElementById('commands');
             const commands = Array.from(commandsDiv.getElementsByTagName('p'))
@@ -136,4 +145,5 @@
         });
     </script>
 </body>
+
 </html>
